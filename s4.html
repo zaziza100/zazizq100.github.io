@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Script_01_02 </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                    
+    <link rel="stylesheet" href="css/magnific-popup.css">                                
+    <link rel="stylesheet" href="css/templatemo-style.css">                              
+
+ 
+</head>
+<style>
+  body {
+    background-color: white;
+    margin: 0%;
+   }
+     </style>
+   <style type="text/css"> 
+   H1 { 
+    font-family: Arial, Helvetica, Verdana, sans-serif; /* Гарнитура шрифта */ 
+    font-size: 150%; /* Размер текста */ 
+    font-weight: lighter; /* Светлое начертание */ 
+   }
+    P { 
+    color: black; 
+    
+   }
+ 
+   
+
+  </style>
+  
+
+<p>Click the button to open a new window with message.</p>
+<p><button onclick="myFunction()">Click</button></p>
+<p>Click the button to go Google</p>
+<p><button onclick="myFunctionFac()">Click</button></p>
+<p><input type="button" value="Load new document" onclick="newDoc()"></p>
+<p><input type="button" value="Go Forward" onclick="goBack()"></p>
+<p>Click the button to display the base URI of the document.</p>
+
+<p><button onclick="myFunction2()">Click</button></p>
+
+
+<p>Click the button to get your coordinates.</p>
+
+<p><button onclick="getLocation()">Click</button></p>
+
+<p>Click the button to display the full date.</p>
+
+<p><button onclick="myYear()">Click</button></p>
+
+
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo"></p>
+<script>
+function myFunction() {
+    var myWindow = window.open("", "Message", "width=200,height=200");
+    myWindow.document.write("<p>Вікно всплило</p>");
+}
+function myFunctionFac() {
+    window.open("https://www.google.com", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=1000,height=1000");
+}
+
+function newDoc() {
+    window.location.assign("https://www.google.com")
+}
+function goBack() {
+    window.history.forward()
+}
+function myFunction2() {
+    var x = document.baseURI;
+    document.getElementById("demo").innerHTML = x;
+}
+
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+function myYear() {
+    var d = new Date();
+    var n = d.getFullYear();
+    var d2 = new Date();
+    var n2 = d.getDate();
+    var d3 = new Date();
+    var n3 = d.getMonth();
+    document.getElementById("demo").innerHTML = n;
+    document.getElementById("demo3").innerHTML = n3+1;
+    document.getElementById("demo2").innerHTML = n2;
+}
+</script>
+
+  <p><a href="s51.html" class="tm-button tm-button-wide">Наступна частина</a></p>
+
+
+
+<body>
+
+</body>

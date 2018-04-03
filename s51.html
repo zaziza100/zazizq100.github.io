@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Script_05 </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                    
+    <link rel="stylesheet" href="css/magnific-popup.css">                                
+    <link rel="stylesheet" href="css/templatemo-style.css">                              
+
+ 
+</head>
+<style>
+  body {
+    background-color: white;
+    margin: 0%;
+   }
+     </style>
+   <style type="text/css"> 
+   H1 { 
+    font-family: Arial, Helvetica, Verdana, sans-serif; /* Гарнитура шрифта */ 
+    font-size: 150%; /* Размер текста */ 
+    font-weight: lighter; /* Светлое начертание */ 
+   }
+    P { 
+    color: black; 
+    
+   }
+ 
+   
+
+  </style>
+  <form name="f1">
+a <input type="text" value="-3.141592653589" id="x1"/>
+b <input type="text" value="0" id="x2"/>
+n <input type="text" value="10" id="x3"/>
+<br><br>
+<input type="button" value="Протабулювати" onclick="myfunc(); "></input>
+<div id="rez"></div>
+</form>
+<script>
+function get(id){return document.getElementById(id)}
+function getVal(id){return parseFloat(get(id).value)}
+
+function y(x){return Math.cos(((Math.PI)*x)/3)+ Math.exp(1-Math.sin(x)) }
+
+function myfunc(){
+var rezult = "";
+rezult+='<table border=3 align=center bgcolor=ivory>';
+rezult+='<tr align=center><td><b>X';
+rezult+='<td><b>Функція y';
+rezult+='</tr><tr align=center><td colspan=2><b>Цикл For</tr>';
+
+var a =[getVal('x1'),getVal('x2'),getVal('x3')];
+var min = null;
+var max = null;
+
+var kmin = null;
+var kmax = null;
+
+for (var x=a[0]; x<=a[1]; x+=(a[1]-a[0])/a[2]) {
+var z=y(x);
+
+if (min === null || min > z) {min = z; kmin=x;}
+if (max === null || max < z) {max = z; kmax=x;}
+
+rezult+='<tr align=center><td width=50%>'+(x).toFixed(3);
+rezult+='<td>'+z.toFixed(4)+'</tr>';
+}
+rezult+="</table>";
+rezult+="<br>min:"+min ;
+rezult+="<br>kmin:"+kmin ;
+rezult+="<br>max:"+max ;
+rezult+="<br>kmax:"+kmax ;
+get('rez').innerHTML = rezult;
+//alert( "min = " + min + ", max = " + max );
+}
+function goBack() {
+    window.history.back()
+}
+</script>
+
+
+  <p><a href="s61.html" class="tm-button tm-button-wide">Наступна частина</a></p>
+
+
+
+<body>
+
+</body>

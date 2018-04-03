@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Form</title>
+  <link href='style2.css' rel='stylesheet' type='text/css'>
+  <style>
+  body {
+    background-image: url(img/doski_chrnyy_ryad_tekstura_fon_derevo_55220_1920x1080.jpg); 
+    
+   }
+  </style>
+  <script>
+function goBack() {
+    window.history.back()
+}
+</script>
+</head>
+
+<body>
+<form method='post' class='reg-form'>
+
+		<div class='form-row'>
+			<label for='form_fname'>First Name: </label>
+    		<input type='text' id='form_fname' name='first_name'>
+  		</div>
+
+  		<div class='form-row'>
+    		<label for='form_sname'>Second Name: </label>
+    		<input type='text' id='form_sname' name='second_name'>
+		</div>
+
+		<div class='form-row'>
+			<label for='form_email'>Email: </label>
+			<input type='email' id='form_email' name='email'>
+		</div>
+
+		<div class='form-row'>
+			<label for='form_phone'>Phone: </label>
+			<input type='text' id='form_phone' name='phone'>
+		</div>
+
+		<div class='form-row'>
+			<label for='form_about'>About myself: </label>
+			<textarea id='form_about' name='about'></textarea>
+		</div>
+
+		<div1 class="form-row">
+		<input type="button" value="Завершити реєстрацію" onclick="newDoc()">
+			</div1>
+		
+	</form>
+	<script>
+	function newDoc() {
+    window.location.assign("index.html")
+}
+</script>
+</body>
